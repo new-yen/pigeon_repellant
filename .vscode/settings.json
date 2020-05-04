@@ -1,0 +1,8 @@
+{
+    "python.jediEnabled": false,
+    "python.autoComplete.extraPaths": [
+        null,
+        "/Users/davidnguyen/.vscode/extensions/joedevivo.vscode-circuitpython-0.1.0/stubs",
+        "/Users/davidnguyen/Library/Application Support/Code/User/globalStorage/joedevivo.vscode-circuitpython/bundle/20200502/adafruit-circuitpython-bundle-py-20200502/lib"
+    ]
+}
