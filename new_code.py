@@ -63,4 +63,4 @@ while True:
         # print("Restart")
 
     # print("sleep")
-    time.sleep(2.5)
+    time.sleep(2.3)
