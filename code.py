@@ -1,11 +1,10 @@
 # Write your code here :-)
-from adafruit_circuitplayground.express import cpx
 import board
 import digitalio
 import time
 import pulseio
-from adafruit_circuitplayground import cp
-from adafruit_motor import servo
+from adafruit_circuitplayground.express import cpx
+from adafruit_motor import servo                    # from adafruit_circuitplayground import cp
 
 # Setup digital input for PIR sensor:
 PIR_PIN = board.D2                                  # Pin number connected to PIR sensor output wire.
@@ -14,10 +13,11 @@ pir.direction = digitalio.Direction.INPUT
 
 
 # create a PWMOut object on Pin A3.
-pwm = pulseio.PWMOut(board.A3, duty_cycle=2 ** 15, frequency=50)
+pwm = pulseio.PWMOut(board.A2, duty_cycle=2 ** 15, frequency=50)
 
 # Create a servo object, my_servo.
 my_servo = servo.Servo(pwm)
+my_servo.angle = 0
 
 count = 0
 scan = True
@@ -39,7 +39,6 @@ while True:
                 for angle in range(0, 180, 15):     # 0 - 180 degrees, 15 degrees at a time.
                     my_servo.angle = angle
                     time.sleep(0.01)
-                    print(angle)
                 time.sleep(2)
                 for angle in range(180, 0, -15):    # 180 - 0 degrees, 15 degrees at a time.
                     my_servo.angle = angle
