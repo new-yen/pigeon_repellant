@@ -3,7 +3,7 @@
     "python.autoComplete.extraPaths": [
         "/Users/davidnguyen/.vscode/extensions/joedevivo.vscode-circuitpython-0.1.0/boards/0x239A/0x8019",
         "/Users/davidnguyen/.vscode/extensions/joedevivo.vscode-circuitpython-0.1.0/stubs",
-        "/Users/davidnguyen/Library/Application Support/Code/User/globalStorage/joedevivo.vscode-circuitpython/bundle/20200502/adafruit-circuitpython-bundle-py-20200507/lib"
+        "/Users/davidnguyen/Library/Application Support/Code/User/globalStorage/joedevivo.vscode-circuitpython/bundle/20200507/adafruit-circuitpython-bundle-py-20200508/lib"
     ],
     "circuitpython.board.vid": "0x239A",
     "circuitpython.board.pid": "0x8019"
