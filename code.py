@@ -17,7 +17,7 @@ pwm = pulseio.PWMOut(board.A2, duty_cycle=2 ** 15, frequency=50)
 # Create a servo object, my_servo.
 my_servo = servo.Servo(pwm)
 
-my_servo.angle = 0
+my_servo.angle = None
 count = 0
 scan = True
 
@@ -31,18 +31,26 @@ while True:
 
             else:
                 print("ALARM!")                     # Movement detected - Alarm! Light, Sound, Motion, Count = 0
+                
                 cpx.pixels[0] = (10, 0, 0)
                 # cpx.play_file("bird_caw1.wav")
                 time.sleep(1)
                 cpx.pixels[0] = (0, 0, 0)
+
                 for angle in range(0, 180, 10):     # 0 - 180 degrees, 15 degrees at a time.
                     my_servo.angle = angle
-                    time.sleep(0.02)
-                time.sleep(2)
+                    time.sleep(0.01)
+
+                time.sleep(5)
+                my_servo.angle = None
+
                 for angle in range(180, 0, -10):    # 180 - 0 degrees, 15 degrees at a time.
                     my_servo.angle = angle
-                    time.sleep(0.02)
-                count = 0                           
+                    time.sleep(0.01)
+
+                my_servo.angle = None
+                count = 0                  
+
             scan = False
 
         else:
